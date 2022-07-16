@@ -20,3 +20,7 @@ const diffMap = new Map(
 export const getMode = (difficulty) => diffMap.get(difficulty.toString())
 
 export const validModes = modes;
+
+export const modeChoices = Object.entries(modes).map(([value, name]) => {
+    return {name, value}
+})
