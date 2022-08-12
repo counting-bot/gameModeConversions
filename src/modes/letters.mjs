@@ -22,6 +22,6 @@ export const startingNum = 1
 
 export const wordsToNumbersEnabled = false;
 
-export const mathEnabled = true;
+export const mathEnabled = false;
 
 export const name = "letters"
