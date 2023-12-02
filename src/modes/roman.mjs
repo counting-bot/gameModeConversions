@@ -60,3 +60,5 @@ export const wordsToNumbersEnabled = false;
 export const mathEnabled = true;
 
 export const name = "roman numerals"
+
+export const formatScoreString = (index, name, number) => `**#${index + 1}** ${name}, **${number}**`;

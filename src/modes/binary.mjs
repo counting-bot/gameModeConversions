@@ -19,3 +19,5 @@ export const wordsToNumbersEnabled = false;
 export const mathEnabled = true;
 
 export const name = "binary"
+
+export const formatScoreString = (index, name, number) => `**#${index + 1}** ${name}, **${number}**`;

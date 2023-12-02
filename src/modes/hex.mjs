@@ -18,3 +18,5 @@ export const wordsToNumbersEnabled = false;
 export const mathEnabled = false;
 
 export const name = "hexadecimal"
+
+export const formatScoreString = (index, name, number) => `**#${index + 1}** ${name}, **${number}**`;

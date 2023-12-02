@@ -11,3 +11,5 @@ export const wordsToNumbersEnabled = true;
 export const mathEnabled = true;
 
 export const name = "5s"
+
+export const formatScoreString = (index, name, number) => `**#${index + 1}** ${name}, **${Number(number).toLocaleString()}**`;
