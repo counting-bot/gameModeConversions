@@ -1,23 +1,27 @@
-export const toDecimal = num => {
-    num=num.toString()
+export default class {
+    constructor(){
+        this.diffrence = 1
+        this.startingNum = 1
+        this.wordsToNumbersEnabled = false;
+        this.mathEnabled = true;
+        this.name = "binary"
+    }
+
+    toDecimal(num) {
+        num=num.toString()
     
-    const des = parseInt(num, 2);
+        const des = parseInt(num, 2);
+    
+        if (this.fromDecimal(des) !== num) return undefined;
+    
+        return des;
+    };
 
-    if (fromDecimal(des) !== num) return undefined;
+    fromDecimal(num) {
+        return num.toString(2);
+    }
 
-    return des;
-};
-
-export const fromDecimal = num => num.toString(2);
-
-export const diffrence = 1
-
-export const startingNum = 1
-
-export const wordsToNumbersEnabled = false;
-
-export const mathEnabled = true;
-
-export const name = "binary"
-
-export const formatScoreString = (index, name, number) => `**#${index + 1}** ${name}, **${number}**`;
+    formatScoreString(index, name, number){
+        return `**#${index + 1}** ${name}, **${Number(number).toLocaleString()}**`;
+    }
+}

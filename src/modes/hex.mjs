@@ -1,22 +1,26 @@
-export const toDecimal = num => {
-    num = num.toString().toLowerCase()
-    const des = parseInt(num, 16);
+export default class {
+    constructor(){
+        this.diffrence = 1
+        this.startingNum = 1
+        this.wordsToNumbersEnabled = false;
+        this.mathEnabled = false;
+        this.name = "hexadecimal"
+    }
+  
+    toDecimal(num) {
+        num = num.toString().toLowerCase()
+        const des = parseInt(num, 16);
+    
+        if (fromDecimal(des) !== num) return undefined;
+    
+        return des;
+    };
 
-    if (fromDecimal(des) !== num) return undefined;
+    fromDecimal(num) {
+        return num.toString(16);
+    }
 
-    return des;
+    formatScoreString(index, name, number) {
+        return`**#${index + 1}** ${name}, **${Number(number).toLocaleString()}**`;
+    }
 }
-
-export const fromDecimal = num => num.toString(16);
-
-export const diffrence = 1
-
-export const startingNum = 1
-
-export const wordsToNumbersEnabled = false;
-
-export const mathEnabled = false;
-
-export const name = "hexadecimal"
-
-export const formatScoreString = (index, name, number) => `**#${index + 1}** ${name}, **${number}**`;

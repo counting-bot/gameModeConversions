@@ -1,29 +1,31 @@
-export const toDecimal = l => {
-    if (!/^[a-zA-Z]+$/g.test(l)) return
-    const input = l.toUpperCase().split("")
-    return input.map((letter, index) => (letter.charCodeAt(0) - 64) * (Math.pow(26, input.length - (index + 1)))).reduce((a, b) => a + b)
-}
+export default class {
+  constructor(){
+    this.diffrence = 1
+    this.startingNum = 1
+    this.wordsToNumbersEnabled = false;
+    this.mathEnabled = false;
+    this.name = "letters"
+  }
 
-export const fromDecimal = n => {
+  toDecimal(num) {
+    if (!/^[a-zA-Z]+$/g.test(num)) return
+    const input = num.toUpperCase().split("")
+    return input.map((letter, index) => (letter.charCodeAt(0) - 64) * (Math.pow(26, input.length - (index + 1)))).reduce((a, b) => a + b)
+  }
+
+  fromDecimal(num) {
     let s = []
 
-    while (n > 0) {
+    while (num > 0) {
       let t = (n - 1) % 26;
       s.unshift(String.fromCharCode(65 + t))
-      n = (n - t) / 26 | 0;
+      num = (num - t) / 26 | 0;
     }
-
+  
     return s.join("");
+  }
+
+  formatScoreString(index, name, number) {
+    return `**#${index + 1}** ${name}, **${number}**`
+  }    
 }
-
-export const diffrence = 1
-
-export const startingNum = 1
-
-export const wordsToNumbersEnabled = false;
-
-export const mathEnabled = false;
-
-export const name = "letters"
-
-export const formatScoreString = (index, name, number) => `**#${index + 1}** ${name}, **${number}**`;

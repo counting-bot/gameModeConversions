@@ -1,15 +1,21 @@
-export const toDecimal = num => parseInt(num);
+export default class {
+    constructor(){
+        this.diffrence = 2
+        this.startingNum = 2
+        this.wordsToNumbersEnabled = true;
+        this.mathEnabled = true;
+        this.name = "2s"
+    }
 
-export const fromDecimal = num => num.toString();
+    toDecimal(num) {
+        return parseInt(num)
+    }
+    
+    fromDecimal(num) {
+        return num.toString();
+    }
 
-export const diffrence = 2
-
-export const startingNum = 2
-
-export const wordsToNumbersEnabled = true;
-
-export const mathEnabled = true;
-
-export const name = "2s"
-
-export const formatScoreString = (index, name, number) => `**#${index + 1}** ${name}, **${Number(number).toLocaleString()}**`;
+    formatScoreString(index, name, number) {
+        return `**#${index + 1}** ${name}, **${Number(number).toLocaleString()}**`
+    }    
+}
