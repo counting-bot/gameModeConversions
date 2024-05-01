@@ -11,7 +11,7 @@ export default class {
         num = num.toString().toLowerCase()
         const des = parseInt(num, 16);
     
-        if (fromDecimal(des) !== num) return undefined;
+        if (this.fromDecimal(des) !== num) return undefined;
     
         return des;
     };
