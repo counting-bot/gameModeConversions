@@ -17,7 +17,7 @@ export default class {
     let s = []
 
     while (num > 0) {
-      let t = (n - 1) % 26;
+      let t = (num - 1) % 26;
       s.unshift(String.fromCharCode(65 + t))
       num = (num - t) / 26 | 0;
     }
