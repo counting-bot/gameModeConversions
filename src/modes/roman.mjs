@@ -70,7 +70,7 @@ export default class {
             num += val * (val < fromRomanNumerals[roman[0]] ? -1 : 1);
         }
     
-        if (input !== fromDecimal(num)) return undefined
+        if (input !== this.fromDecimal(num)) return undefined
     
         return num;
     }
