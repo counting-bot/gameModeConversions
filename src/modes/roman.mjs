@@ -60,6 +60,7 @@ export default class {
     }
 
     toDecimal(input) {
+        if (!input) return;
         if (!/^[a-zA-Z]+$/g.test(input)) return
         let roman = input.toUpperCase().split('');
         let num = 0;
