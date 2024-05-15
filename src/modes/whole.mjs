@@ -16,6 +16,6 @@ export default class {
     }
 
     formatScoreString(index, name, number){
-        `**#${index + 1}** ${name}, **${Number(number).toLocaleString()}**`;
+        return `**#${index + 1}** ${name}, **${Number(number).toLocaleString()}**`;
     }
 }
