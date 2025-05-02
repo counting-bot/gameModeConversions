@@ -8,7 +8,7 @@ export default class {
     }
 
     toDecimal(num) {
-        num=num.toString()
+        num=num?.toString()
     
         const des = parseInt(num, 2);
     
