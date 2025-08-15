@@ -3,7 +3,7 @@ export default class {
         this.diffrence = 1
         this.startingNum = 1
         this.wordsToNumbersEnabled = false;
-        this.mathEnabled = true;
+        this.mathEnabled = false;
         this.name = "binary"
     }
 
