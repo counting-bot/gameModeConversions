@@ -8,7 +8,24 @@ export default class {
     }
 
     toDecimal(num) {
-        return num.split(':').reverse().reduce((prev, curr, i) => prev + curr*Math.pow(60, i), 0);
+        const parts = num.split(":");
+        if (parts.length > 5) return undefined;
+        if (parts.some(p => !/^\d+$/.test(p))) return undefined;
+
+        const values = parts.map(Number).reverse();
+        if ((values[0] ?? 0) > 59) return undefined;
+        if ((values[1] ?? 0) > 59) return undefined;
+        if ((values[2] ?? 0) > 23) return undefined;
+
+        const multipliers = [
+            1,        // seconds
+            60,       // minutes
+            3600,     // hours
+            86400,    // days
+            31536000  // years (365 days)
+        ];
+
+        return values.reduce((sum, value, i) => sum + value * multipliers[i], 0);
     }
 
     fromDecimal(num) {
