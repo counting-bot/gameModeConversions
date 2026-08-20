@@ -10,12 +10,15 @@ export default class {
     toDecimal(num) {
         const parts = num.split(":");
         if (parts.length > 5) return undefined;
+
+        parts[0] = parts[0].replace(/^(\d+)d$/, "$1");
         if (parts.some(p => !/^\d+$/.test(p))) return undefined;
 
         const values = parts.map(Number).reverse();
-        if ((values[0] ?? 0) > 59) return undefined;
-        if ((values[1] ?? 0) > 59) return undefined;
-        if ((values[2] ?? 0) > 23) return undefined;
+
+        if ((values[0] ?? 0) > 59) return undefined; // seconds
+        if ((values[1] ?? 0) > 59) return undefined; // minutes
+        if ((values[2] ?? 0) > 23) return undefined; // hours
 
         const multipliers = [
             1,        // seconds
