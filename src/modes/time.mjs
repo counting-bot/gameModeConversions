@@ -42,6 +42,6 @@ export default class {
     }
 
     formatScoreString(index, name, number){
-        return `**#${index + 1}** ${name}, **${this.toDecimal(number).toLocaleString()}**`;
+        return `**#${index + 1}** ${name}, **${this.fromDecimal(number).toLocaleString()}**`;
     }
 }
