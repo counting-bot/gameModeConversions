@@ -32,13 +32,16 @@ export default class {
     }
 
     fromDecimal(num) {
+        const dd = Math.floor(num / 86400);
+        num %= 86400;
+
         const hh = Math.floor(num / 3600);
         num %= 3600;
 
         const mm = Math.floor(num / 60);
         const ss = num % 60;
 
-        return [hh, mm, ss].map(v => String(v).padStart(2, '0')).join(':');
+        return `${dd > 0 ? `${dd}d ` : ''}${[hh, mm, ss].map(v => String(v).padStart(2, '0')).join(':')}`;
     }
 
     formatScoreString(index, name, number){
