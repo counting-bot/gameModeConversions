@@ -8,6 +8,7 @@ import hex from './modes/hex.mjs'
 import letters from './modes/letters.mjs'
 import roman from './modes/roman.mjs'
 import whole from './modes/whole.mjs'
+import time from './modes/time.mjs'
 
 const modes = {
     0: whole,
@@ -19,7 +20,8 @@ const modes = {
     6: five,
     7: ten,
     8: hundred,
-    9: roman
+    9: roman,
+    10: time
 }
 
 const diffMap = new Map(
