@@ -41,7 +41,7 @@ export default class {
         const mm = Math.floor(num / 60);
         const ss = num % 60;
 
-        return `${dd > 0 ? `${dd}d` : ''}${[hh, mm, ss].map(v => String(v).padStart(2, '0')).join(':')}`;
+        return `${dd > 0 ? `${dd}d:` : ''}${[hh, mm, ss].map(v => String(v).padStart(2, '0')).join(':')}`;
     }
 
     formatScoreString(index, name, number){
