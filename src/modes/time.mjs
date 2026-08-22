@@ -8,6 +8,7 @@ export default class {
     }
 
     toDecimal(num) {
+        if (!num || typeof num !== "string" || !num.includes(":")) return undefined;
         const parts = num.split(":");
         if (parts.length > 5) return undefined;
 
